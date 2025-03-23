@@ -17,6 +17,7 @@ body {
     width: 350px;
     height: 200px;
     font-family: 'Garamond', 'Times New Roman', serif !important;
+    font: Garamond;
     color: #000;
     transition: transform 0.2s;
     background-color: #e0e0e0;

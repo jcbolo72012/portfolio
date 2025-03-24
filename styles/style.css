@@ -45,7 +45,7 @@ button:hover {
     background-color: #201d1d;
 }
 
-@media (max-width: 600px) {
+@media (max-width: 1200px) {
     .card {
         width: 90%;
     }

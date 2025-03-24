@@ -35,9 +35,9 @@ body {
 }
 
 .card button {
-    background-color: #605f5f !important;
+    background-color: #606060 !important;
     
-    color: #ac9595;
+    /* color: #ac9595; */
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;

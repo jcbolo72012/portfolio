@@ -32,7 +32,7 @@ body {
 }
 
 .card button {
-    background-color: #333333 !important;
+    background-color: #484747 !important;
     color: #ac9595;
     border-radius: 5px;
     padding: 10px 15px;
@@ -42,7 +42,7 @@ body {
 }
 
 button:hover {
-    background-color: #262323;
+    background-color: #201d1d;
 }
 
 @media (max-width: 600px) {

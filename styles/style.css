@@ -32,7 +32,10 @@ body {
 }
 
 .card button {
-    background-color: #484747 !important;
+    /* background-color: #484747 !important; */
+    background-image: url('neuron.png');
+    background-size: cover;
+    background-position: center;
     color: #ac9595;
     border-radius: 5px;
     padding: 10px 15px;

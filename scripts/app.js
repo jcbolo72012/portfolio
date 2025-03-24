@@ -2,15 +2,15 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = {
         about: {
             title: "About Me",
-            text: "I am a software developer with a passion for creating innovative solutions."
+            text: "Software Developer."
         },
         projects: {
             title: "Projects",
-            text: "Here are some of my projects: Project A, Project B, Project C."
+            text: "Law Firm Website | Music Generation"
         },
         contact: {
             title: "Contact Me",
-            text: "You can reach me at: email@example.com."
+            text: "jcbolo72012@gmail.com"
         }
     };
 

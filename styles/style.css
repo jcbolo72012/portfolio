@@ -20,7 +20,7 @@ body {
     font: Garamond;
     transition: transform 0.2s;
     /* background-color: #e0e0e0; */
-    background-image: url('./assets/neuron.png');
+    background-image: url('../assets/neuron.png');
     background-size: cover;
     background-position: center;
     color: #333;
@@ -35,7 +35,7 @@ body {
 }
 
 .card button {
-    background-color: #7e7d7d !important;
+    background-color: #605f5f !important;
     
     color: #ac9595;
     border-radius: 5px;

@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         projects: {
             title: "Projects",
-            text: "Law Firm Website | Music Generation"
+            text: "Law Firm Website | Music Generation | Portfolio Website"
         },
         contact: {
             title: "Contact Me",

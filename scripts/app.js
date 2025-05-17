@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         projects: {
             title: "Projects",
-            text: "Law Firm Website | Music Generation | Portfolio Website"
+            text: "Law Firm Site (<a href='https://richardsulzmanlaw.com' target='_blank'>richardsulzmanlaw.com</a>) | Music Generation | Portfolio Website"
         },
         contact: {
             title: "Contact Me",

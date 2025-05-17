@@ -19,7 +19,7 @@ document.addEventListener('DOMContentLoaded', function() {
 
     function updateContent(section) {
         titleElement.textContent = content[section].title;
-        textElement.textContent = content[section].text;
+        textElement.innerHTML = content[section].text;
     }
 
     document.getElementById('about-btn').addEventListener('click', function() {

@@ -2,15 +2,19 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = {
         about: {
             title: "About Me",
-            text: "Software Developer."
+            text: "Software Developer. Freelance Web Dev."
         },
         projects: {
             title: "Projects",
-            text: "Law Firm Site (<a href='https://richardsulzmanlaw.com' target='_blank'>richardsulzmanlaw.com</a>) | Music Generation | Portfolio Website"
+            text: "(<a href='https://richardsulzmanlaw.com' target='_blank'>Law Firm Site</a>)"
         },
         contact: {
             title: "Contact Me",
             text: "jcbolo72012@gmail.com"
+        },
+        publications: {
+            title: "Publications",
+            text: "..."
         }
     };
 
@@ -32,6 +36,10 @@ document.addEventListener('DOMContentLoaded', function() {
 
     document.getElementById('contact-btn').addEventListener('click', function() {
         updateContent('contact');
+    });
+
+     document.getElementById('publications-btn').addEventListener('click', function() {
+        updateContent('publications');
     });
 
     // Initialize with the About Me section

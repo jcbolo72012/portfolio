@@ -16,7 +16,7 @@ document.addEventListener('DOMContentLoaded', function() {
             title: "Publications",
             text: "<ul>\
                 <li><a href=\"https://arxiv.org/pdf/2210.01582\">FRIDA: Fisheye Re-Identification Dataset with Annotations</a></li>\
-                <li>Publication 2</li>\
+                <li> Visible coalitions of neuronal activities in brain-to-text communication via handwriting</li>\
             </ul>"
         }
     };

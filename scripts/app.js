@@ -14,7 +14,10 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         publications: {
             title: "Publications",
-            text: "..."
+            text: "<ul>\
+                <li><a href=\"https://arxiv.org/pdf/2210.01582\">FRIDA: Fisheye Re-Identification Dataset with Annotations</a></li>\
+                <li>Publication 2</li>\
+            </ul>"
         }
     };
 

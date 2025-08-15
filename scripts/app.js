@@ -2,7 +2,7 @@ document.addEventListener('DOMContentLoaded', function() {
     const content = {
         about: {
             title: "About Me",
-            text: "Software Developer. Freelance Web Dev."
+            text: "Software Engineer"
         },
         projects: {
             title: "Projects",

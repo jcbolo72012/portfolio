@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         projects: {
             title: "Projects",
-            text: "(<a href='https://richardsulzmanlaw.com' target='_blank'>Law Firm Site</a>)"
+            text: "(<a href='https://richardsulzmanlaw.com' target='_blank'>Law Firm Site</a>) (<a href='https://promptutils.tools' target='_blank'>ML and Prompting Utilities</a>)"
         },
         contact: {
             title: "Contact Me",

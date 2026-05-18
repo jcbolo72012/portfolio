@@ -4,7 +4,7 @@
   "description": "A responsive portfolio website for a software developer.",
   "main": "src/index.html",
   "scripts": {
-    "start": "live-server src"
+    "start": "live-server ."
   },
   "keywords": [
     "portfolio",
@@ -13,7 +13,9 @@
   ],
   "author": "Your Name",
   "license": "MIT",
-  "dependencies": {},
+  "dependencies": {
+    "@chenglou/pretext": "^0.5.0"
+  },
   "devDependencies": {
     "live-server": "^1.2.1"
   }

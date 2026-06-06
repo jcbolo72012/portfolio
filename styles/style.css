@@ -48,6 +48,79 @@ body {
     background-size: 100%;
     position: relative;
     z-index: 10;
+    display: flex;
+    flex-direction: column;
+}
+
+#card-text {
+    flex: 1;
+    overflow-y: auto;
+    margin-right: 10px;
+    padding-right: 5px;
+}
+
+#card-text::-webkit-scrollbar {
+    width: 6px;
+}
+
+#card-text::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+#card-text::-webkit-scrollbar-thumb {
+    background: #888;
+    border-radius: 3px;
+}
+
+#card-text::-webkit-scrollbar-thumb:hover {
+    background: #555;
+}
+
+.project-card {
+    border-left: 3px solid #000;
+    padding-left: 15px;
+    margin-bottom: 20px;
+    padding-bottom: 15px;
+}
+
+.project-card:last-child {
+    margin-bottom: 0;
+    padding-bottom: 0;
+}
+
+.project-name {
+    font-weight: bold;
+    font-size: 1.1em;
+    margin-bottom: 5px;
+}
+
+.project-tech {
+    font-size: 0.85em;
+    color: #555;
+    margin-bottom: 8px;
+    font-style: italic;
+}
+
+.project-description {
+    margin-bottom: 8px;
+    line-height: 1.4;
+}
+
+.project-links {
+    display: flex;
+    gap: 12px;
+    flex-wrap: wrap;
+}
+
+.project-links a {
+    color: #000;
+    text-decoration: underline;
+    font-size: 0.9em;
+    transition: color 0.2s;
+}
+
+.project-links a:hover {
+    color: #555;
 }
 
 .card:hover {

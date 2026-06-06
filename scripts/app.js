@@ -6,7 +6,7 @@ document.addEventListener('DOMContentLoaded', function() {
         },
         projects: {
             title: "Projects",
-            text: "(<a href='https://richardsulzmanlaw.com' target='_blank'>Law Firm Site</a>) (<a href='https://promptutils.tools' target='_blank'>ML and Prompting Utilities</a>)"
+            text: "<div class='project-card'><div class='project-name'>EcomIntent API</div><div class='project-tech'>Tech: DistilBERT, FastAPI, Modal, RapidAPI</div><div class='project-description'>E-commerce intent classifier that analyzes customer support tickets and categorizes them (WISMO, returns, exchanges, etc). Achieves 99.92% accuracy with 8ms latency — 15x cheaper and 50x faster than GPT-4o mini.</div><div class='project-links'><a href='https://github.com/jcbolo72012/ecomintent-api' target='_blank'>GitHub</a><a href='https://rapidapi.com/john-UG9kfZiW5/api/ecomintent-e-commerce-intent-classifie' target='_blank'>RapidAPI</a><a href='https://huggingface.co/JohnBolognino/ecomintent-distilbert' target='_blank'>Model</a></div></div><div class='project-card'><div class='project-name'>Richard Sulzman Law</div><div class='project-tech'>Tech: React, Responsive Design</div><div class='project-description'>Custom website for law firm with professional design and mobile optimization.</div><div class='project-links'><a href='https://richardsulzmanlaw.com' target='_blank'>Website</a></div></div><div class='project-card'><div class='project-name'>ML and Prompting Utilities</div><div class='project-tech'>Tech: Python, AI/ML Tools</div><div class='project-description'>Collection of utilities for machine learning and prompt engineering.</div><div class='project-links'><a href='https://promptutils.tools' target='_blank'>Website</a></div></div>"
         },
         contact: {
             title: "Contact Me",
@@ -18,10 +18,6 @@ document.addEventListener('DOMContentLoaded', function() {
                 <li><a href=\"https://arxiv.org/pdf/2210.01582\">FRIDA: Fisheye Re-Identification Dataset with Annotations</a></li>\
                 <li><a href=\"https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13517/3056602/Visible-coalitions-of-neuronal-activities-in-brain-to-text-communication/10.1117/12.3056602.short\" target=\"_blank\">Visible coalitions of neuronal activities in brain-to-text communication via handwriting</a></li>\
             </ul>"
-        },
-        services: {
-            title: "Web Dev",
-            text: "<strong>Website Development</strong><br>$800 - Custom, responsive website tailored to your business needs.<br><br><strong>Monthly Support ($50/month)</strong><br>• On-call maintenance & bug fixes<br>• SEO optimization<br>• Technical consultation<br>• Performance monitoring<br><br><strong>Contract Terms</strong><br>50% deposit upon agreement, 50% upon completion. Monthly service includes up to 5 hours of support. Additional hours billed at $100/hr. All work backed by satisfaction guarantee. <a href=\"mailto:jcbolo72012@gmail.com\">Contact for details</a>"
         }
     };
 
@@ -52,10 +48,6 @@ document.addEventListener('DOMContentLoaded', function() {
 
      document.getElementById('publications-btn').addEventListener('click', function() {
         updateContent('publications');
-    });
-
-    document.getElementById('services-btn').addEventListener('click', function() {
-        updateContent('services');
     });
 
     // Initialize with the About Me section

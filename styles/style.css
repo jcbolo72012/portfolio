@@ -116,8 +116,7 @@ body {
 
 .card button {
     background-color: #919191 !important;
-    
-    /* color: #ac9595; */
+    color: #000;
     border-radius: 5px;
     padding: 10px 15px;
     cursor: pointer;

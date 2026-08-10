@@ -194,6 +194,75 @@ body {
     color: #1c1a14;
 }
 
+/* ── Experience section ──────────────────────────────────────────────────── */
+
+.experience-layout {
+    display: flex;
+    gap: 32px;
+    align-items: flex-start;
+}
+
+.experience-movement {
+    position: sticky;
+    top: 20px;
+    flex-shrink: 0;
+}
+
+#movement {
+    width: 220px;
+    height: 220px;
+    display: block;
+}
+
+.experience-entries {
+    flex: 1;
+    min-width: 0;
+    padding-bottom: 55vh;
+}
+
+.entry {
+    border-left: 2px solid #d6d0c4;
+    padding: 4px 0 18px 16px;
+    margin-bottom: 4px;
+    opacity: 0.42;
+    transition: opacity 0.4s ease, border-color 0.4s ease;
+}
+
+.entry:last-child {
+    padding-bottom: 0;
+}
+
+.entry.active {
+    opacity: 1;
+    border-left-color: #1c1a14;
+}
+
+.entry-role {
+    font-weight: bold;
+    font-size: 1.02em;
+    margin-bottom: 2px;
+}
+
+.entry-place {
+    font-size: 0.86em;
+    color: #6b6355;
+    font-style: italic;
+    margin-bottom: 3px;
+}
+
+.entry-dates {
+    font-size: 0.78em;
+    color: #aaa09a;
+    letter-spacing: 0.04em;
+    margin-bottom: 7px;
+}
+
+.entry-desc {
+    font-size: 0.9em;
+    line-height: 1.55;
+    color: #2a2620;
+}
+
 @media (max-width: 920px) {
     .card {
         width: 92%;
@@ -233,126 +302,16 @@ body {
         display: inline-flex;
         align-items: center;
     }
-}
-
-/* Stylings for the watch movement effect */
-*{ box-sizing:border-box; margin:0; padding:0; }
-  html{ scroll-behavior:smooth; }
-  body{
-    background:
-      radial-gradient(1200px 800px at 20% 0%, #12151a 0%, var(--bg) 60%);
-    color:var(--text);
-    font-family:var(--body);
-    font-weight:300;
-    letter-spacing:.01em;
-  }
-
-  header{
-    min-height:92vh;
-    display:flex; flex-direction:column; justify-content:center;
-    padding:0 8vw;
-    border-bottom:1px solid var(--hairline);
-  }
-  .eyebrow{
-    font-family:var(--mono); font-size:.72rem; letter-spacing:.35em;
-    text-transform:uppercase; color:var(--brass); margin-bottom:1.5rem;
-  }
-  h1{
-    font-family:var(--display); font-weight:400;
-    font-size:clamp(3rem, 8vw, 6.5rem);
-    line-height:1.02; letter-spacing:.01em;
-  }
-  .sub{
-    margin-top:1.6rem; max-width:34ch; color:var(--dim);
-    font-size:1.05rem; line-height:1.6;
-  }
-  .scroll-hint{
-    margin-top:4rem; font-family:var(--mono); font-size:.7rem;
-    letter-spacing:.3em; text-transform:uppercase; color:var(--dim);
-    display:flex; align-items:center; gap:1rem;
-  }
-  .scroll-hint::after{
-    content:""; width:56px; height:1px; background:var(--brass);
-    animation: pulse 2.4s ease-in-out infinite;
-  }
-  @keyframes pulse{ 50%{ opacity:.25; } }
- 
-  /* ============================================================
-     LAYOUT — sticky movement on the left, entries scroll right.
-     `position: sticky` is the whole trick here: the figure pins
-     while its tall parent (.timeline) scrolls past.
-     ============================================================ */
-  .timeline{
-    display:grid;
-    grid-template-columns: minmax(0,46%) minmax(0,54%);
-  }
-  .movement-col{ position:relative; }
-  .movement-sticky{
-    position:sticky; top:0; height:100vh;
-    display:flex; align-items:center; justify-content:center;
-    padding:4vh 2vw;
-  }
-  svg#movement{ width:min(42vw, 88vh); height:auto; display:block; }
- 
-  /* ============================================================
-     ENTRIES
-     ============================================================ */
-  .entries{ padding:10vh 8vw 10vh 4vw; }
-  .entry{
-    min-height:72vh;
-    display:flex; flex-direction:column; justify-content:center;
-    border-bottom:1px solid var(--hairline);
-    opacity:.28; transform:translateY(12px);
-    transition:opacity .6s ease, transform .6s ease;
-  }
-  .entry.active{ opacity:1; transform:none; }
-  .entry:last-child{ border-bottom:none; }
- 
-  .entry .year{
-    font-family:var(--mono); font-size:.78rem; letter-spacing:.3em;
-    color:var(--brass); display:flex; align-items:center; gap:.9rem;
-  }
-  .entry .year::before{
-    content:""; width:9px; height:9px; border-radius:50%;
-    background:var(--ruby);
-    box-shadow:0 0 0 2px rgba(208,50,78,.25);
-  }
-  .entry h2{
-    font-family:var(--display); font-weight:400;
-    font-size:clamp(1.8rem, 3.2vw, 2.7rem);
-    margin:1.1rem 0 .3rem;
-  }
-  .entry .org{
-    font-size:.95rem; letter-spacing:.16em; text-transform:uppercase;
-    color:var(--steel); margin-bottom:1.3rem;
-  }
-  .entry p{
-    max-width:46ch; color:var(--dim); line-height:1.75; font-size:1rem;
-  }
- 
-  footer{
-    padding:14vh 8vw; text-align:center;
-    font-family:var(--mono); font-size:.72rem;
-    letter-spacing:.3em; text-transform:uppercase; color:var(--dim);
-  }
- 
-  /* ============================================================
-     MOBILE — movement shrinks and pins to the top
-     ============================================================ */
-  @media (max-width: 860px){
-    .timeline{ grid-template-columns:1fr; }
-    .movement-sticky{
-      height:44vh; top:0; z-index:2;
-      background:linear-gradient(var(--bg) 78%, transparent);
+    .experience-layout {
+        flex-direction: column;
     }
-    svg#movement{ width:min(76vw, 40vh); }
-    .entries{ padding:2vh 8vw 8vh; }
-    .entry{ min-height:64vh; }
-  }
- 
-  @media (prefers-reduced-motion: reduce){
-    html{ scroll-behavior:auto; }
-    .scroll-hint::after{ animation:none; }
-    .entry{ transition:none; }
-  }
+    .experience-movement {
+        position: static;
+        align-self: center;
+    }
+    #movement {
+        width: 180px;
+        height: 180px;
+    }
+}
 

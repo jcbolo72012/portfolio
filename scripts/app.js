@@ -248,11 +248,13 @@ document.addEventListener('DOMContentLoaded', function () {
                 const TURNS = 2.5;
                 let target = 0, current = 0;
 
+                const scrollEl = document.getElementById('content');
+                this._scrollEl = scrollEl;
                 function onScroll() {
-                    const max = document.documentElement.scrollHeight - innerHeight;
-                    target = max > 0 ? scrollY / max : 0;
+                    const max = scrollEl.scrollHeight - scrollEl.clientHeight;
+                    target = max > 0 ? scrollEl.scrollTop / max : 0;
                 }
-                addEventListener('scroll', onScroll, { passive: true });
+                scrollEl.addEventListener('scroll', onScroll, { passive: true });
                 this._scrollHandler = onScroll;
                 onScroll();
 
@@ -283,14 +285,18 @@ document.addEventListener('DOMContentLoaded', function () {
                             dateText.textContent = h.target.dataset.year;
                         }
                     }
-                }, { rootMargin: '-45% 0px -45% 0px' });
+                }, { rootMargin: '-45% 0px -45% 0px', root: scrollEl });
                 this._io = io;
                 entries.forEach(e => io.observe(e));
             },
 
             cleanup() {
                 if (this._stop)          { this._stop(); this._stop = null; }
-                if (this._scrollHandler) { removeEventListener('scroll', this._scrollHandler); this._scrollHandler = null; }
+                if (this._scrollHandler) {
+                    if (this._scrollEl) this._scrollEl.removeEventListener('scroll', this._scrollHandler);
+                    this._scrollHandler = null;
+                    this._scrollEl = null;
+                }
                 if (this._io)            { this._io.disconnect(); this._io = null; }
             },
         },

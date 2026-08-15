@@ -1,12 +1,14 @@
 body {
     margin: 0;
+    padding: 32px;
+    box-sizing: border-box;
+    height: 100vh;
+    overflow: hidden;
     display: flex;
     justify-content: center;
-    align-items: center;
-    min-height: 100vh;
+    align-items: flex-start;
     background: linear-gradient(135deg, #1a1a1a 0%, #404040 50%, #1a1a1a 100%);
     position: relative;
-    overflow-x: hidden;
     font-family: 'Garamond', 'Times New Roman', serif !important;
 }
 
@@ -39,6 +41,9 @@ body {
     padding: 7px;
     width: 860px;
     max-width: 94vw;
+    height: 100%;
+    display: flex;
+    flex-direction: column;
     box-sizing: border-box;
     box-shadow: 0 6px 40px rgba(0, 0, 0, 0.5);
 }
@@ -48,7 +53,9 @@ body {
     padding: 44px 52px;
     display: flex;
     flex-direction: column;
-    min-height: 440px;
+    flex: 1;
+    min-height: 0;
+    overflow: hidden;
     box-sizing: border-box;
 }
 
@@ -119,6 +126,23 @@ body {
 
 .content {
     flex: 1;
+    min-height: 0;
+    overflow-y: auto;
+    scrollbar-width: thin;
+    scrollbar-color: #d6d0c4 transparent;
+}
+
+.content::-webkit-scrollbar {
+    width: 4px;
+}
+
+.content::-webkit-scrollbar-thumb {
+    background: #d6d0c4;
+    border-radius: 2px;
+}
+
+.content::-webkit-scrollbar-track {
+    background: transparent;
 }
 
 #card-text {
@@ -273,13 +297,23 @@ body {
 }
 
 @media (max-width: 600px) {
+    body {
+        height: auto;
+        overflow: auto;
+        padding: 16px;
+    }
     .card {
         width: 96%;
+        height: auto;
         padding: 5px;
     }
     .card-inner {
         padding: 20px 18px;
         min-height: unset;
+        overflow: visible;
+    }
+    .content {
+        overflow-y: visible;
     }
     #name {
         font-size: 2em;
@@ -306,8 +340,15 @@ body {
         flex-direction: column;
     }
     .experience-movement {
-        position: static;
+        position: sticky;
+        top: 0;
+        z-index: 20;
         align-self: center;
+        width: 100%;
+        display: flex;
+        justify-content: center;
+        background-color: #f9f5ec;
+        padding: 8px 0;
     }
     #movement {
         width: 180px;

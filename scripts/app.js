@@ -1,104 +1,22 @@
 document.addEventListener('DOMContentLoaded', function () {
 
-    // ── Helpers ───────────────────────────────────────────────────────────────
-
-    function projectCard({ name, meta, description, links }) {
-        const linkHTML = links
-            .map(({ label, href }) => `<a href="${href}" target="_blank">${label}</a>`)
-            .join('');
-        return `
-            <div class="project-card">
-                <div class="project-name">${name}</div>
-                <div class="project-tech">${meta}</div>
-                <div class="project-description">${description}</div>
-                <div class="project-links">${linkHTML}</div>
-            </div>`;
-    }
-
     // ── Section content ───────────────────────────────────────────────────────
+    // Each section's markup lives in its own file under sections/ so it can be
+    // edited independently of this router/behavior script.
 
     const sections = {
 
         about: {
-            title: 'About Me',
-            html: `
-                <div style="text-align:center;">
-                I am a Software Engineer specializing in Machine Learning and NLP, currently
-                building AI-enabled learning products at Savvas Learning Company. <br> Research interests include NLP, Computer Vision, Brain-Computer Interfacing, and AI Ethics.
-                </div>
-            `,
+            file: 'sections/about.html',
         },
 
         projects: {
-            title: 'Projects',
-            html: [
-                projectCard({
-                    name: 'EcomIntent API',
-                    meta: 'Tech: DistilBERT, FastAPI, Modal, RapidAPI',
-                    description: `E-commerce intent classifier that analyzes customer support tickets and
-                        categorizes them (WISMO, returns, exchanges, etc). Achieves 99.92% accuracy with
-                        8ms latency — 15x cheaper and 50x faster than GPT-4o mini.`,
-                    links: [
-                        { label: 'GitHub',   href: 'https://github.com/jcbolo72012/ecomintent-api' },
-                        { label: 'RapidAPI', href: 'https://rapidapi.com/john-UG9kfZiW5/api/ecomintent-e-commerce-intent-classifie' },
-                        { label: 'Model',    href: 'https://huggingface.co/JohnBolognino/ecomintent-distilbert' },
-                        { label: 'Website',  href: 'https://ecomintent.com/' },
-                    ],
-                }),
-                projectCard({
-                    name: 'ML and Prompting Utilities',
-                    meta: 'Tech: Python, AI/ML Tools',
-                    description: 'Collection of utilities for machine learning and prompt engineering.',
-                    links: [
-                        { label: 'Website', href: 'https://promptutils.tools' },
-                    ],
-                }),
-            ].join(''),
+            file: 'sections/projects.html',
         },
 
         // ── Experience ────────────────────────────────────────────────────────
         experience: {
-            title: 'Experience',
-
-            html: `
-                <div class="experience-layout">
-                    <div class="experience-movement">
-                        <svg id="movement" viewBox="0 0 480 480" aria-hidden="true"></svg>
-                    </div>
-                    <div class="experience-entries">
-                        <div class="entry" data-year="2024" data-month="12">
-                            <div class="entry-role">Software Developer</div>
-                            <div class="entry-place">Savvas Learning Company &middot; Boston, MA</div>
-                            <div class="entry-dates">Dec 2024 &ndash; Present</div>
-                            <div class="entry-desc">Designed transformer NLP models for automated essay scoring, cutting AWS inference costs by 75%. Reduced real-time latency 50% by migrating SageMaker endpoints from Inf1 to Inf2 and upgrading to DeBERTa-v3.</div>
-                        </div>
-                        <div class="entry" data-year="2023" data-month="6">
-                            <div class="entry-role">Associate Software Developer</div>
-                            <div class="entry-place">Savvas Learning Company &middot; Boston, MA</div>
-                            <div class="entry-dates">Jun 2023 &ndash; Dec 2024</div>
-                            <div class="entry-desc">Distilled frontier LLM behaviors into smaller production models. Deployed containerized models via SageMaker real-time endpoints serving over 10,000 school districts. Established Datadog monitoring for endpoint health and latency.</div>
-                        </div>
-                        <div class="entry" data-year="2022" data-month="1">
-                            <div class="entry-role">Researcher</div>
-                            <div class="entry-place">Learning, Intelligence &amp; Signal Processing Lab &middot; Dartmouth College</div>
-                            <div class="entry-dates">Jan 2022 &ndash; Present</div>
-                            <div class="entry-desc">Applied transformer models to decode handwritten language from motor cortex neural activity. Built a novel 3D neural activity dataset and used Grad-CAM to identify critical cortical regions. Presented at ICMV 2024.</div>
-                        </div>
-                        <div class="entry" data-year="2021" data-month="6">
-                            <div class="entry-role">Undergraduate Researcher</div>
-                            <div class="entry-place">Visual Information Processing Lab &middot; Boston University</div>
-                            <div class="entry-dates">Jun 2021 &ndash; Jan 2022</div>
-                            <div class="entry-desc">Co-authored the FRIDA fisheye re-identification benchmark (IEEE AVSS 2022). Benchmarked 8 state-of-the-art deep learning re-ID algorithms; awarded Undergraduate Research Opportunity Program funding three times.</div>
-                        </div>
-                        <div class="entry" data-year="2019" data-month="5">
-                            <div class="entry-role">Python Developer</div>
-                            <div class="entry-place">Potoo Solutions &middot; Norwalk, CT</div>
-                            <div class="entry-dates">May 2019 &ndash; Jun 2023</div>
-                            <div class="entry-desc">Developed NLP pipelines for consumer sentiment and illicit-seller detection. Refactored core ETL in Python and Go (300% speedup). Built automation saving 1,500+ hours per year across 600+ clients including Adidas and VF.</div>
-                        </div>
-                    </div>
-                </div>
-            `,
+            file: 'sections/experience.html',
 
             init() {
                 const svg = document.getElementById('movement');
@@ -302,30 +220,7 @@ document.addEventListener('DOMContentLoaded', function () {
         },
 
         publications: {
-            title: 'Publications',
-            html: [
-                projectCard({
-                    name: 'FRIDA: Fisheye Re-Identification Dataset with Annotations',
-                    meta: 'Mertcan Cokbas, John Bolognino, Janusz Konrad, Prakash Ishwar &mdash; IEEE CVPR Workshop 2022',
-                    description: `Introduces a first-of-its-kind dataset of 240k+ bounding-box annotations
-                        of people captured by overhead fisheye cameras. Evaluates 10 state-of-the-art
-                        person re-identification algorithms, showing up to 11.64% mAP improvement when
-                        training on FRIDA vs. standard rectilinear-camera datasets.`,
-                    links: [
-                        { label: 'arXiv', href: 'https://arxiv.org/pdf/2210.01582' },
-                    ],
-                }),
-                projectCard({
-                    name: 'Visible coalitions of neuronal activities in brain-to-text communication via handwriting',
-                    meta: 'SPIE Proceedings, Vol. 13517 (2025)',
-                    description: `Explores the neural correlates of handwriting-based brain-to-text communication,
-                        analyzing visible coalitions of neuronal activity that underpin decoding of handwritten
-                        characters from neural signals.`,
-                    links: [
-                        { label: 'SPIE', href: 'https://www.spiedigitallibrary.org/conference-proceedings-of-spie/13517/3056602/Visible-coalitions-of-neuronal-activities-in-brain-to-text-communication/10.1117/12.3056602.short' },
-                    ],
-                }),
-            ].join(''),
+            file: 'sections/publications.html',
         },
 
     };
@@ -334,13 +229,22 @@ document.addEventListener('DOMContentLoaded', function () {
 
     const textElement = document.getElementById('card-text');
     const navLinks    = document.querySelectorAll('.nav-link');
+    const htmlCache   = {};
 
-    function updateContent(section) {
+    async function loadSectionHTML(section) {
+        if (!(section in htmlCache)) {
+            const response = await fetch(sections[section].file);
+            htmlCache[section] = await response.text();
+        }
+        return htmlCache[section];
+    }
+
+    async function updateContent(section) {
         // Tear down the outgoing section
         for (const [key, sec] of Object.entries(sections)) {
             if (key !== section && sec.cleanup) sec.cleanup();
         }
-        textElement.innerHTML = sections[section].html;
+        textElement.innerHTML = await loadSectionHTML(section);
         navLinks.forEach(function (link) {
             link.classList.toggle('active', link.dataset.section === section);
         });

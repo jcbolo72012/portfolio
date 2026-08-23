@@ -1,9 +1,16 @@
+html {
+    height: 100%;
+    overscroll-behavior: none;
+}
+
 body {
     margin: 0;
     padding: 32px;
     box-sizing: border-box;
     height: 100vh;
+    height: 100dvh;
     overflow: hidden;
+    overscroll-behavior: none;
     display: flex;
     justify-content: center;
     align-items: flex-start;
@@ -128,6 +135,8 @@ body {
     flex: 1;
     min-height: 0;
     overflow-y: auto;
+    overscroll-behavior: contain;
+    -webkit-overflow-scrolling: touch;
     scrollbar-width: thin;
     scrollbar-color: #d6d0c4 transparent;
 }
@@ -298,22 +307,14 @@ body {
 
 @media (max-width: 600px) {
     body {
-        height: auto;
-        overflow: auto;
         padding: 16px;
     }
     .card {
         width: 96%;
-        height: auto;
         padding: 5px;
     }
     .card-inner {
         padding: 20px 18px;
-        min-height: unset;
-        overflow: visible;
-    }
-    .content {
-        overflow-y: visible;
     }
     #name {
         font-size: 2em;
